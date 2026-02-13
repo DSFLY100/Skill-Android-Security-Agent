@@ -70,3 +70,10 @@ Agent 读取源码 + FlowDroid 报告，结合数据流证据和业务逻辑，�
 # 四、总结
 
 目前把思路分享给大家，我还在调教当中，后续效果还不错的话，我再把我的skill.md、脚本都分享出来。
+
+# 广告
+
+如果你对App安全、风控攻防、渗透测试 感兴趣，欢迎关注我的个人微信公众号，也欢迎大家私聊我一起沟通。
+
+![qrcode_for_gh_1cbc1ee9a93e_258](https://github.com/user-attachments/assets/2d78e6c5-a7ad-4426-8e87-d5b113085694)
+
