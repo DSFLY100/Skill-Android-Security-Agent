@@ -1,5 +1,6 @@
 # Skill-Android-Security-Agent
 构建基于 Skill 的 Android 智能审计 Agent
+
 一、简言
 在移动安全领域，完全依赖正则表达式的扫描容易产生海量误报，而完全依赖 AI 阅读代码又受限于上下文窗口和对复杂数据流的计算能力。
 本文提出一种基于 Skill 编排的审计架构。该架构将传统的静态分析工具（Soot/FlowDroid）封装为 Agent 的“工具箱”，由 Claude Code 等大模型作为“大脑”进行调度与最终决策。
