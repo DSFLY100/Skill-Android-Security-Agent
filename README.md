@@ -2,10 +2,12 @@
 构建基于 Skill 的 Android 智能审计 Agent
 
 一、简言
+
 在移动安全领域，完全依赖正则表达式的扫描容易产生海量误报，而完全依赖 AI 阅读代码又受限于上下文窗口和对复杂数据流的计算能力。
 本文提出一种基于 Skill 编排的审计架构。该架构将传统的静态分析工具（Soot/FlowDroid）封装为 Agent 的“工具箱”，由 Claude Code 等大模型作为“大脑”进行调度与最终决策。
 
 二、核心架构思路
+
 我们可以设计一个 “漏斗式” 的分析流水线：
 
 第一层：java代码和资源文件获取 (基础设施层)
@@ -33,6 +35,7 @@ app-security-automation/
     └── quick_scan.sh       # 封装 grep/rg 的扫描逻辑
 
 三、详细工作流设计
+
 第一步：源码还原
 Agent 调用 scripts/decompile.sh。
 将 APK 转换为 Java 伪代码。Agent 会特别关注 --show-bad-code 参数，确保即使反编译不完美也能获取尽可能多的逻辑信息。
