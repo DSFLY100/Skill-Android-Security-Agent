@@ -53,7 +53,7 @@ Agent 调用 `scripts/decompile.sh`。
 
 ## **第三步：污点分析与路径验证**
 
-这是本架构的核心差异点。 正则只能看到“有点像漏洞”，Soot 才能证明“数据确实流过去了”。Agent 针对第二步发现的可疑点，调用 `scripts/analyze_flow.py`。利用工具 Soot + FlowDroid 将第二步发现的 Sink 点（如 SQL 执行处）作为目标，追踪 Source 点（如 `getIntent`, `EditText`），计算是否存在一条从 Source 到 Sink 的通路。最后产出结构化的数据流报告。例如：“在 `LoginActivity.java` 中，变量 `username` 从 `Intent` 输入，未经净化直接流入 `rawQuery`。”
+这是本架构的核心差异点。 正则只能看到“有点像漏洞”，Soot 才能证明“数据确实流过去了”。Agent 针对第二步发现的可疑点，调用 `scripts/analyze_candidates.py`。利用工具 Soot + FlowDroid 将第二步发现的 Sink 点（如 SQL 执行处）作为目标，追踪 Source 点（如 `getIntent`, `EditText`），计算是否存在一条从 Source 到 Sink 的通路。最后产出结构化的数据流报告。例如：“在 `LoginActivity.java` 中，变量 `username` 从 `Intent` 输入，未经净化直接流入 `rawQuery`。”
 
 ## **第四步：AI 智能裁决**
 
